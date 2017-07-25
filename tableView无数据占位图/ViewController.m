@@ -36,7 +36,6 @@
     [KKRefresh beginHeaderRefreshWithScrollView:self.tableView];
     
     _tableView.placeHolderView = [[KKTableViewNoDataView alloc] initWithFrame:self.view.bounds image:[UIImage imageNamed:@"no_data"] viewClick:^{
-        [weakself.tableView reloadData];
         [KKRefresh beginHeaderRefreshWithScrollView:weakself.tableView];
     }];
 }

@@ -39,7 +39,6 @@
     dispatch_once(&onceToken, ^{
         [self swizzleInstanceSelector:@selector(reloadData) WithSwizzledSelector:@selector(kk_reloadData)];
     });
-    
 }
 
 - (void)setPlaceHolderView:(UIView *)placeHolderView {
@@ -55,9 +54,7 @@
 - (void)kk_reloadData {
     [self kk_checkEmpty];
     [self kk_reloadData];
-    
 }
-
 
 
 - (void)kk_checkEmpty {
