@@ -34,8 +34,12 @@
         });
     }];
     [KKRefresh beginHeaderRefreshWithScrollView:self.tableView];
+    //当使用tableVieHeader的时候设置KKTableViewNoDataView的frame即可
+//    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200)];
+//    _tableView.tableHeaderView.backgroundColor = [UIColor redColor];
+//    CGRect frame = CGRectMake(0, CGRectGetHeight(self.tableView.tableHeaderView.frame), CGRectGetWidth(self.tableView.frame), CGRectGetHeight(self.tableView.frame)-CGRectGetHeight(self.tableView.tableHeaderView.frame)-64.0);
     
-    _tableView.placeHolderView = [[KKTableViewNoDataView alloc] initWithFrame:self.view.bounds image:[UIImage imageNamed:@"no_data"] viewClick:^{
+    _tableView.placeHolderView = [[KKTableViewNoDataView alloc] initWithFrame:self.tableView.bounds image:[UIImage imageNamed:@"no_data"] viewClick:^{
         [KKRefresh beginHeaderRefreshWithScrollView:weakself.tableView];
     }];
 }

@@ -25,6 +25,7 @@
         self.clickBlock = clickBlock;
         self.img = img;
         [self setupSubViews];
+        self.clipsToBounds = YES;
     }
     return self;
 }
@@ -43,7 +44,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.imgView.center = CGPointMake(self.center.x, self.center.y - 64);
+    self.imgView.center = CGPointMake(CGRectGetWidth(self.frame)/2.0, CGRectGetHeight(self.frame)/2.0);
 }
 
 - (void)clickImgView:(UITapGestureRecognizer *)recognizer {
